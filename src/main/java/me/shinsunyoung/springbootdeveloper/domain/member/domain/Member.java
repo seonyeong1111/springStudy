@@ -2,10 +2,7 @@ package me.shinsunyoung.springbootdeveloper.domain.member.domain;
 
 import jakarta.persistence.*;
 
-import lombok.AllArgsConstructor;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -17,11 +14,16 @@ import me.shinsunyoung.springbootdeveloper.domain.member.enums.SocialType;
 import me.shinsunyoung.springbootdeveloper.domain.review.domain.Review;
 import me.shinsunyoung.springbootdeveloper.global.common.BaseEntity;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 @NoArgsConstructor(access= AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Getter
 @Entity
+@Builder
+@DynamicUpdate
+@DynamicInsert //이 두 개는 insert와 update 시 null 인 경우는 그냥 쿼리를 보내지 않도록 해줍니다.
 public class Member extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,7 +52,11 @@ public class Member extends BaseEntity {
 
     private String email;
 
+    @ColumnDefault("0")
     private Integer point;
+
+    //member_prfer 생략
+
     @OneToMany(mappedBy = "member",cascade = CascadeType.ALL)
     private List<Review> reviewList=new ArrayList<>();
 
