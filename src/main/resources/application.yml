@@ -1,0 +1,33 @@
+#spring:
+#  jpa:
+#    #전송 쿼리 확인
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#
+#
+#    #테이블 생성 후에 data.sql 실행
+#    defer-datasource-initialization: true
+# 구름톤 설정
+
+ #UMC 설정
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/study
+    username: root
+    password: 0000
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  sql:
+    init:
+      mode: never
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+        hbm2ddl:
+          auto: create
+        default_batch_fetch_size: 1000
