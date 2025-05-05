@@ -41,6 +41,8 @@ public class Member extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
+    private Integer age;
+
     @Enumerated(EnumType.STRING)
     private SocialType socialType;
 
@@ -48,15 +50,14 @@ public class Member extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private MemberStatus status;
 
-    private LocalDate inactiveDate;
+    private LocalDate inactiveDate;//비활성 상태가 될 때 LocalDate.now() 등으로 값이 설정
 
     private String email;
 
     @ColumnDefault("0")
     private Integer point;
 
-    //member_prfer 생략
-
+    //member_prfer 대신 review
     @OneToMany(mappedBy = "member",cascade = CascadeType.ALL)
     private List<Review> reviewList=new ArrayList<>();
 

@@ -25,7 +25,7 @@ public class ExistIdsValidator implements ConstraintValidator<ExistIds,Long> {
 
         if(!isValid) {
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate(ErrorStatus._TODO_NOT_FOUND.toString()).addConstraintViolation();
+            context.buildConstraintViolationWithTemplate(ErrorStatus._STORE_NOT_FOUND.toString()).addConstraintViolation();
         }
         return isValid;
     }

@@ -34,4 +34,19 @@ public class Review extends BaseEntity {
         this.member = member;
         this.store = store;
     }
+
+    public void setMember(Member member){
+        if(this.member != null) //기존 관계 끊기
+            member.getReviewList().remove(this);
+        this.member = member;
+        member.getReviewList().add(this); //member의 reviewList에 현재 MemberPrefer 객체를 추가
+    }
+
+    public void setStore(Store store){
+        if(this.store != null) //기존 관계 끊기
+            store.getReviewList().remove(this);
+        this.store=store;
+        member.getReviewList().add(this); //member의 preferList에 현재 MemberPrefer 객체를 추가
+    }
+
 }

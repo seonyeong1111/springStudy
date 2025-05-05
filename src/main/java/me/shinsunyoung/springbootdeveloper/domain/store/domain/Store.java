@@ -3,6 +3,7 @@ package me.shinsunyoung.springbootdeveloper.domain.store.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import me.shinsunyoung.springbootdeveloper.domain.member.domain.Member;
+import me.shinsunyoung.springbootdeveloper.domain.review.domain.Review;
 import me.shinsunyoung.springbootdeveloper.global.common.BaseEntity;
 
 import java.util.ArrayList;
@@ -25,8 +26,8 @@ public class Store extends BaseEntity {
 
     private Float score;
 
-    @OneToMany(mappedBy = "review",cascade = CascadeType.ALL)
-    private List<Store> storeList=new ArrayList<>();
+    @OneToMany(mappedBy = "store",cascade = CascadeType.ALL)
+    private List<Review> reviewList=new ArrayList<>();
 
     @Builder
     public Store(String name, String address, Float score) {
@@ -34,6 +35,8 @@ public class Store extends BaseEntity {
         this.address = address;
         this.score = score;
     }
+
+
 
 
 }
