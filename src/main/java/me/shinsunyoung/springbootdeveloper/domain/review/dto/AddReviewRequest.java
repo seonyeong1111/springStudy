@@ -4,7 +4,7 @@ import lombok.*;
 import me.shinsunyoung.springbootdeveloper.global.validation.annotation.ExistStoreId;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@AllArgsConstructor
+@AllArgsConstructor //아 세터 안 써주니까
 @Getter
 @Builder
 public class AddReviewRequest {

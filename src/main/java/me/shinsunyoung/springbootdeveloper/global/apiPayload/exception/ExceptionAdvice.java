@@ -10,6 +10,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
@@ -43,12 +44,23 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
 
         Map<String, String> errors = new LinkedHashMap<>();
 
-        e.getBindingResult().getFieldErrors().stream()
-                .forEach(fieldError -> {
-                    String fieldName = fieldError.getField();
-                    String errorMessage = Optional.ofNullable(fieldError.getDefaultMessage()).orElse("");
-                    errors.merge(fieldName, errorMessage, (existingErrorMessage, newErrorMessage) -> existingErrorMessage + ", " + newErrorMessage);
-                });
+//        e.getBindingResult().getFieldErrors().stream()
+//                .forEach(fieldError -> {
+//                    String fieldName = fieldError.getField();
+//                    String errorMessage = Optional.ofNullable(fieldError.getDefaultMessage()).orElse("");
+//                    errors.merge(fieldName, errorMessage, (existingErrorMessage, newErrorMessage) -> existingErrorMessage + ", " + newErrorMessage);
+//                });
+        e.getBindingResult().getAllErrors().forEach(error -> {
+            String fieldName;
+            if (error instanceof FieldError fieldError) {
+                fieldName = fieldError.getField();  // 필드 단위 에러
+            } else {
+                fieldName = error.getObjectName();  // 클래스 단위 에러
+            }
+
+            String errorMessage = Optional.ofNullable(error.getDefaultMessage()).orElse("");
+            errors.merge(fieldName, errorMessage, (existingError, newError) -> existingError + ", " + newError);
+        });
 
         return handleExceptionInternalArgs(e,HttpHeaders.EMPTY,ErrorStatus.valueOf("_BAD_REQUEST"),request,errors);
     }

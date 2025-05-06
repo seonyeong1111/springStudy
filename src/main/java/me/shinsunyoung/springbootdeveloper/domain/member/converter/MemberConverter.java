@@ -14,6 +14,7 @@ public class MemberConverter {
         return MemberResponseDto.JoinResultDTO.builder()
                 .memberId(member.getId())
                 .createdAt(LocalDateTime.now())
+                .point(member.getPoint())
                 .build();
     }
 

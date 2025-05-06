@@ -25,7 +25,7 @@ public class ExistStoreIdValidator implements ConstraintValidator<ExistStoreId, 
         if(!isValid) {
 
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate(ErrorStatus._TODO_NOT_FOUND.toString()).addConstraintViolation();
+            context.buildConstraintViolationWithTemplate(ErrorStatus._STORE_NOT_FOUND.toString()).addConstraintViolation();
         }
         return isValid;
     }

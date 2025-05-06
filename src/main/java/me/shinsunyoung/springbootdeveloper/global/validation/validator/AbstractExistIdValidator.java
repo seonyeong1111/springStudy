@@ -17,7 +17,7 @@ public abstract class AbstractExistIdValidator<A extends java.lang.annotation.An
         if (!isValid) {
             context.disableDefaultConstraintViolation();
             context
-                    .buildConstraintViolationWithTemplate("왜 안되노")
+                    .buildConstraintViolationWithTemplate(getErrorStatus().toString())
                     .addConstraintViolation();
         }
 

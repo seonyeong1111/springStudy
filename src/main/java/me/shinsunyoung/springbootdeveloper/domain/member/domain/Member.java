@@ -8,9 +8,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.shinsunyoung.springbootdeveloper.domain.mapping.MemberMission;
 import me.shinsunyoung.springbootdeveloper.domain.member.enums.Gender;
 import me.shinsunyoung.springbootdeveloper.domain.member.enums.MemberStatus;
 import me.shinsunyoung.springbootdeveloper.domain.member.enums.SocialType;
+import me.shinsunyoung.springbootdeveloper.domain.mission.domain.Mission;
 import me.shinsunyoung.springbootdeveloper.domain.review.domain.Review;
 import me.shinsunyoung.springbootdeveloper.global.common.BaseEntity;
 import org.hibernate.annotations.ColumnDefault;
@@ -57,9 +59,13 @@ public class Member extends BaseEntity {
     @ColumnDefault("0")
     private Integer point;
 
-    //member_prfer 대신 review
+    //member_prfer 관계 생략
+
     @OneToMany(mappedBy = "member",cascade = CascadeType.ALL)
     private List<Review> reviewList=new ArrayList<>();
+
+    @OneToMany(mappedBy = "member",cascade = CascadeType.ALL)
+    private List<MemberMission> mmList=new ArrayList<>();
 
 
 }
