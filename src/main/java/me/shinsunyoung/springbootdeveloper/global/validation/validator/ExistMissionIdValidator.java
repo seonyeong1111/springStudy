@@ -1,6 +1,6 @@
 package me.shinsunyoung.springbootdeveloper.global.validation.validator;
 
-import me.shinsunyoung.springbootdeveloper.domain.mission.service.MissionService;
+import me.shinsunyoung.springbootdeveloper.mission.service.MissionService;
 import me.shinsunyoung.springbootdeveloper.global.apiPayload.code.BaseErrorCode;
 import me.shinsunyoung.springbootdeveloper.global.apiPayload.code.status.ErrorStatus;
 import me.shinsunyoung.springbootdeveloper.global.validation.annotation.ExistMissionId;

@@ -1,33 +1,32 @@
-package me.shinsunyoung.springbootdeveloper.global.validation.validator;
+package me.shinsunyoung.springbootdeveloper.todoList.validation.validator;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
-import me.shinsunyoung.springbootdeveloper.store.service.StoreService;
 import me.shinsunyoung.springbootdeveloper.global.apiPayload.code.status.ErrorStatus;
-import me.shinsunyoung.springbootdeveloper.global.validation.annotation.ExistStoreId;
+import me.shinsunyoung.springbootdeveloper.todoList.service.TodoListService;
+import me.shinsunyoung.springbootdeveloper.todoList.validation.annotation.ExistIds;
 import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class ExistStoreIdValidator implements ConstraintValidator<ExistStoreId, Long> {
+public class ExistIdsValidator implements ConstraintValidator<ExistIds,Long> {
 
-    private final StoreService storeService;
+    private final TodoListService todoListService;
 
     @Override
-    public void initialize(ExistStoreId constraintAnnotation) {
+    public void initialize(ExistIds constraintAnnotation) {
         ConstraintValidator.super.initialize(constraintAnnotation);
     }
 
     @Override
-    public boolean isValid(Long storeId, ConstraintValidatorContext context) {
-        boolean isValid =storeService.existsById(storeId);
-        if(!isValid) {
+    public boolean isValid(Long id, ConstraintValidatorContext context) {
+        boolean isValid = todoListService.existsById(id);
 
+        if(!isValid) {
             context.disableDefaultConstraintViolation();
             context.buildConstraintViolationWithTemplate(ErrorStatus._STORE_NOT_FOUND.toString()).addConstraintViolation();
         }
         return isValid;
     }
 }
-

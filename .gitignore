@@ -42,4 +42,5 @@ bin/
 .DS_Store
 
 ### TodoList###
-me/shinsunyoung/springbootdeveloper/domain/todoList/
+/src/main/java/me/shinsunyoung/springbootdeveloper/domain/todoList/
+

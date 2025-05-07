@@ -1,6 +1,6 @@
 package me.shinsunyoung.springbootdeveloper.global.validation.validator;
 
-import me.shinsunyoung.springbootdeveloper.domain.store.service.StoreService;
+import me.shinsunyoung.springbootdeveloper.store.service.StoreService;
 import me.shinsunyoung.springbootdeveloper.global.apiPayload.code.BaseErrorCode;
 import me.shinsunyoung.springbootdeveloper.global.apiPayload.code.status.ErrorStatus;
 import me.shinsunyoung.springbootdeveloper.global.validation.annotation.ExistStoreId;
