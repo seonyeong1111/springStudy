@@ -57,6 +57,7 @@ public class ExceptionAdvice extends ResponseEntityExceptionHandler {
             } else {
                 fieldName = error.getObjectName();  // 클래스 단위 에러
             }
+            System.out.println("MethodArgumentNotValidException 발생");
 
             String errorMessage = Optional.ofNullable(error.getDefaultMessage()).orElse("");
             errors.merge(fieldName, errorMessage, (existingError, newError) -> existingError + ", " + newError);

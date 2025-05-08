@@ -20,9 +20,6 @@ public enum ErrorStatus implements BaseErrorCode {
     _MISSION_ALREADY_IN_PROGRESS(HttpStatus.CONFLICT, "MISSION409", "이미 진행 중인 미션입니다.");
 
 
-
-
-
     private final HttpStatus httpStatus;
     private final String code;
     private final String message;
