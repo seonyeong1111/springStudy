@@ -21,7 +21,7 @@ public class MemberController {
 
     private final MemberService memberService;
 
-    @PostMapping("/")
+    @PostMapping("/signup")
     public ApiResponse<MemberResponseDto.JoinResultDTO> join(@RequestBody @Valid MemberRequestDto.JoinDto request){
         Member savedMemeber = memberService.joinMember(request);
         return ApiResponse.of(MemberConverter.toJoinResultDTO(savedMemeber), SuccessStatus._CREATED);

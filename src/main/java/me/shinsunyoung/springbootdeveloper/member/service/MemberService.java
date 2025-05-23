@@ -5,6 +5,7 @@ import me.shinsunyoung.springbootdeveloper.member.converter.MemberConverter;
 import me.shinsunyoung.springbootdeveloper.member.domain.Member;
 import me.shinsunyoung.springbootdeveloper.member.dto.MemberRequestDto;
 import me.shinsunyoung.springbootdeveloper.member.repository.MemberRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,9 +14,13 @@ public class MemberService{
 
     private final MemberRepository memberRepository;
 
+    private final PasswordEncoder passwordEncoder;
+
     public Member joinMember(MemberRequestDto.JoinDto request) {
 
         Member newMember = MemberConverter.toMember(request); //컨버터 위치
+
+        newMember.encodePassword(passwordEncoder.encode(request.getPassword()));
 
        return memberRepository.save(newMember);
     }

@@ -10,12 +10,14 @@ import java.util.List;
 
 import me.shinsunyoung.springbootdeveloper.member.domain.enums.Gender;
 import me.shinsunyoung.springbootdeveloper.member.domain.enums.MemberStatus;
+import me.shinsunyoung.springbootdeveloper.member.domain.enums.Role;
 import me.shinsunyoung.springbootdeveloper.member.domain.enums.SocialType;
 import me.shinsunyoung.springbootdeveloper.review.domain.Review;
 import me.shinsunyoung.springbootdeveloper.global.common.BaseEntity;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @NoArgsConstructor(access= AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -57,6 +59,12 @@ public class Member extends BaseEntity {
     @ColumnDefault("0")
     private Integer point;
 
+    @Column(nullable = false)
+    private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     //member_prfer 관계 생략
 
     @OneToMany(mappedBy = "member",cascade = CascadeType.ALL)
@@ -64,6 +72,10 @@ public class Member extends BaseEntity {
 
     @OneToMany(mappedBy = "member",cascade = CascadeType.ALL)
     private List<MemberMission> mmList=new ArrayList<>();
+
+    public void encodePassword(String password) {
+        this.password = password;
+    }
 
 
 }

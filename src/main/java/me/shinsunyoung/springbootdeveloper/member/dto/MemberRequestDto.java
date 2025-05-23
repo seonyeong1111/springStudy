@@ -1,6 +1,7 @@
 package me.shinsunyoung.springbootdeveloper.member.dto;
 
 import lombok.Getter;
+import me.shinsunyoung.springbootdeveloper.member.domain.enums.Role;
 
 import java.util.List;
 
@@ -17,5 +18,9 @@ public class MemberRequestDto {
         Integer birthDay;
         String address;
         String specAddress;
+        String password;
+        String email;
+        Role role;
+
     }
 }
