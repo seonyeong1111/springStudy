@@ -1,9 +1,6 @@
 package me.shinsunyoung.springbootdeveloper.review.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
@@ -13,8 +10,8 @@ import me.shinsunyoung.springbootdeveloper.review.dto.AddReviewRequest;
 import me.shinsunyoung.springbootdeveloper.review.dto.ReviewListResponse;
 import me.shinsunyoung.springbootdeveloper.review.dto.ReviewResponse;
 import me.shinsunyoung.springbootdeveloper.review.service.ReviewService;
-import me.shinsunyoung.springbootdeveloper.global.apiPayload.ApiResponse;
-import me.shinsunyoung.springbootdeveloper.global.apiPayload.code.status.SuccessStatus;
+import me.shinsunyoung.springbootdeveloper.apiPayload.ApiResponse;
+import me.shinsunyoung.springbootdeveloper.apiPayload.code.status.SuccessStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

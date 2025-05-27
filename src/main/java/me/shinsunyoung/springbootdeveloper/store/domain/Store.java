@@ -3,7 +3,7 @@ package me.shinsunyoung.springbootdeveloper.store.domain;
 import jakarta.persistence.*;
 import lombok.*;
 import me.shinsunyoung.springbootdeveloper.review.domain.Review;
-import me.shinsunyoung.springbootdeveloper.global.common.BaseEntity;
+import me.shinsunyoung.springbootdeveloper.global.BaseEntity;
 
 import java.util.ArrayList;
 import java.util.List;

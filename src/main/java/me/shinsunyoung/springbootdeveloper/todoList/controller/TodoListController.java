@@ -1,8 +1,8 @@
 package me.shinsunyoung.springbootdeveloper.todoList.controller;
 
 import lombok.RequiredArgsConstructor;
-import me.shinsunyoung.springbootdeveloper.global.apiPayload.ApiResponse;
-import me.shinsunyoung.springbootdeveloper.global.apiPayload.code.status.SuccessStatus;
+import me.shinsunyoung.springbootdeveloper.apiPayload.ApiResponse;
+import me.shinsunyoung.springbootdeveloper.apiPayload.code.status.SuccessStatus;
 import me.shinsunyoung.springbootdeveloper.todoList.converter.TodoConverter;
 import me.shinsunyoung.springbootdeveloper.todoList.dto.AddTodoRequest;
 import me.shinsunyoung.springbootdeveloper.todoList.dto.TodoResponse;

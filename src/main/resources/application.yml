@@ -31,3 +31,11 @@ spring:
         hbm2ddl:
           auto: update
         default_batch_fetch_size: 1000
+jwt:
+  issuer: ajufresh@gmail.com
+  secret_key: ${JWT_SECRET}
+  accessTokenExpiration: 3600000 #1시간
+  #refreshTokenExpiration: 1209600000 #2주
+kakao:
+  client_id: ${KAKAO_API_KEY}
+  redirect_uri: http://localhost:8080/callback

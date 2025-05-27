@@ -3,7 +3,7 @@ package me.shinsunyoung.springbootdeveloper.todoList.validation.validator;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
-import me.shinsunyoung.springbootdeveloper.global.apiPayload.code.status.ErrorStatus;
+import me.shinsunyoung.springbootdeveloper.apiPayload.code.status.ErrorStatus;
 import me.shinsunyoung.springbootdeveloper.todoList.service.TodoListService;
 import me.shinsunyoung.springbootdeveloper.todoList.validation.annotation.ExistIds;
 import org.springframework.stereotype.Component;

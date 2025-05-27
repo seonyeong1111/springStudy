@@ -1,7 +1,7 @@
 package me.shinsunyoung.springbootdeveloper.member.service;
 
 import lombok.RequiredArgsConstructor;
-import me.shinsunyoung.springbootdeveloper.member.dto.AddMMRequestDto;
+import me.shinsunyoung.springbootdeveloper.member.dto.req.AddMMRequestDto;
 import me.shinsunyoung.springbootdeveloper.member.repository.MMRepository;
 import me.shinsunyoung.springbootdeveloper.member.domain.MemberMission;
 import me.shinsunyoung.springbootdeveloper.member.domain.enums.MissionStatus;

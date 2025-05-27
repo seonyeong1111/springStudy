@@ -1,8 +1,9 @@
 package me.shinsunyoung.springbootdeveloper.member.converter;
 
 import me.shinsunyoung.springbootdeveloper.member.domain.Member;
-import me.shinsunyoung.springbootdeveloper.member.dto.MemberRequestDto;
-import me.shinsunyoung.springbootdeveloper.member.dto.MemberResponseDto;
+import me.shinsunyoung.springbootdeveloper.member.dto.req.MemberRequestDto;
+import me.shinsunyoung.springbootdeveloper.member.dto.res.LoginResDto;
+import me.shinsunyoung.springbootdeveloper.member.dto.res.MemberResponseDto;
 import me.shinsunyoung.springbootdeveloper.member.domain.enums.Gender;
 
 import java.time.LocalDateTime;
@@ -42,6 +43,13 @@ public class MemberConverter {
                 .email(request.getEmail())
                 .password(request.getPassword())
                 .role(request.getRole())
+                .build();
+    }
+
+    public static LoginResDto signInRes(Member member, String accessToken) {
+        return LoginResDto.builder()
+                .id(member.getId())
+                .accessToken(accessToken)
                 .build();
     }
 }

@@ -2,8 +2,8 @@ package me.shinsunyoung.springbootdeveloper.todoList.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import me.shinsunyoung.springbootdeveloper.global.apiPayload.code.status.ErrorStatus;
-import me.shinsunyoung.springbootdeveloper.global.apiPayload.exception.GeneralException;
+import me.shinsunyoung.springbootdeveloper.apiPayload.code.status.ErrorStatus;
+import me.shinsunyoung.springbootdeveloper.apiPayload.exception.GeneralException;
 import me.shinsunyoung.springbootdeveloper.todoList.domain.TodoList;
 import me.shinsunyoung.springbootdeveloper.todoList.repository.TodoListRespository;
 import org.springframework.stereotype.Service;

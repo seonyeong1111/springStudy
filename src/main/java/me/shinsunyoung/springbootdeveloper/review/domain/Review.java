@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import me.shinsunyoung.springbootdeveloper.member.domain.Member;
 import me.shinsunyoung.springbootdeveloper.store.domain.Store;
-import me.shinsunyoung.springbootdeveloper.global.common.BaseEntity;
+import me.shinsunyoung.springbootdeveloper.global.BaseEntity;
 
 @Entity
 @Getter

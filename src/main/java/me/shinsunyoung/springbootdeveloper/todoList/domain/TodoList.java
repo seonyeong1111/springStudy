@@ -3,7 +3,7 @@ package me.shinsunyoung.springbootdeveloper.todoList.domain;
 import jakarta.persistence.*;
 
 import lombok.*;
-import me.shinsunyoung.springbootdeveloper.global.common.BaseEntity;
+import me.shinsunyoung.springbootdeveloper.global.BaseEntity;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
