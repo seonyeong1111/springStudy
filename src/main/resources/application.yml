@@ -14,7 +14,7 @@
  #UMC 설정
 spring:
   datasource:
-    url: univ-server.mysql.database.azure.com
+    url: jdbc:mysql://univ-server.mysql.database.azure.com:3306/univ-database
     username: 'vcbpysauyz'
     password: 'ZJX8JJz8$OmBnaOe'
     driver-class-name: com.mysql.cj.jdbc.Driver
