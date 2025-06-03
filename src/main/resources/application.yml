@@ -39,3 +39,7 @@ jwt:
 kakao:
   client_id: ${KAKAO_API_KEY}
   redirect_uri: http://localhost:8080/callback
+azure:
+  storage:
+    connection-string: ${AZURE_STORAGE_CONNECTION_STRING}
+    container-name: ${AZURE_STORAGE_CONTAINER_NAME}
