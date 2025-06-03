@@ -23,8 +23,6 @@ public enum ErrorStatus implements BaseErrorCode {
     _IMAGE_NOT_FOUND(HttpStatus.NOT_FOUND, "IMAGE404","유효하지 않은 ImageId입니다.");
 
 
-
-
     private final HttpStatus httpStatus;
     private final String code;
     private final String message;
