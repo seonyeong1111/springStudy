@@ -14,7 +14,7 @@
  #UMC 설정
 spring:
   datasource:
-    url: web-app-server.mysql.database.azure.com/web-app-database
+    url: jdbc:mysql://web-app-server.mysql.database.azure.com:3306/web-app-database
     username: 'iqandarghr'
     password: 'odeng00!1'
     driver-class-name: com.mysql.cj.jdbc.Driver
