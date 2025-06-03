@@ -10,6 +10,7 @@ import me.shinsunyoung.springbootdeveloper.member.domain.Member;
 public class LoginResDto {
 
         private Long id;
+        private String name;
         private String accessToken;
 
 }

@@ -49,6 +49,7 @@ public class MemberConverter {
     public static LoginResDto signInRes(Member member, String accessToken) {
         return LoginResDto.builder()
                 .id(member.getId())
+                .name(member.getName())
                 .accessToken(accessToken)
                 .build();
     }
