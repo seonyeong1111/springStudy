@@ -36,7 +36,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http    .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/members/signup","/login","/callback").permitAll() //나중에 추가하자
+                        .requestMatchers("/members/signup","/login","/callback","/api/images/*").permitAll() //나중에 추가하자
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
